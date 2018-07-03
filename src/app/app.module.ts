@@ -15,13 +15,15 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MenuButtonComponent } from './menu-button/menu-button.component';
 import { WaitingBeerComponent } from './waiting-beer/waiting-beer.component';
+import { IconSliderComponent } from './icon-slider/icon-slider.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuButtonComponent,
-    WaitingBeerComponent
+    WaitingBeerComponent,
+    IconSliderComponent
   ],
   imports: [
     BrowserModule,
