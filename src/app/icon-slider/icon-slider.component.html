@@ -1,0 +1,3 @@
+<div>
+  <i (click)="changeValue(i)" *ngFor="let item of icons; let i = index" [ngStyle]="{'color': color}" [ngClass]="{'far fa-square':!item.selected,'fas fa-stop':item.selected}"></i>
+</div>
