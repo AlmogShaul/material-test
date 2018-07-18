@@ -9,6 +9,37 @@ export class AppComponent implements OnInit {
   title = 'app';
   dogs: any[];
   showPageA: boolean;
+  state = 'inactive';
+  productDetailsHeight = '100px';
+  imageHeight = '100%';
+  imageWidth = '100px';
+  private raised = false;
+  panelFlexDirection = 'row';
+  showDesc = false;
+  toggleState() {
+    this.raised = !this.raised;
+    if (this.raised) {
+      this.raiseUp();
+    } else {
+      this.collapse();
+    }
+  }
+
+  private collapse() {
+    this.productDetailsHeight = '100px';
+    this.imageHeight = '100%';
+    this.imageWidth = '100px';
+    this.panelFlexDirection  = 'row';
+    this.showDesc = false;
+  }
+
+  private raiseUp() {
+    this.productDetailsHeight = 'calc(100% - 50px)';
+    this.imageHeight = '200px';
+    this.imageWidth = '100%';
+    this.panelFlexDirection  = 'column';
+    this.showDesc = true;
+  }
 
   setShowPageA() {
     this.showPageA = true;
@@ -36,4 +67,6 @@ export class AppComponent implements OnInit {
       }
     ];
   }
+
+
 }
