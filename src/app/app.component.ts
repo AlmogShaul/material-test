@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   private raised = false;
   panelFlexDirection = 'row';
   showDesc = false;
+  carouselOne: any;
+
   toggleState() {
     this.raised = !this.raised;
     if (this.raised) {
@@ -29,7 +31,7 @@ export class AppComponent implements OnInit {
     this.productDetailsHeight = '100px';
     this.imageHeight = '100%';
     this.imageWidth = '100px';
-    this.panelFlexDirection  = 'row';
+    this.panelFlexDirection = 'row';
     this.showDesc = false;
   }
 
@@ -37,7 +39,7 @@ export class AppComponent implements OnInit {
     this.productDetailsHeight = 'calc(100% - 50px)';
     this.imageHeight = '200px';
     this.imageWidth = '100%';
-    this.panelFlexDirection  = 'column';
+    this.panelFlexDirection = 'column';
     this.showDesc = true;
   }
 
@@ -50,6 +52,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.carouselOne = {
+      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+      slide: 1,
+      speed: 400,
+      interval: 4000,
+      point: {
+        visible: true
+      },
+      load: 2,
+      touch: true,
+      loop: true,
+      custom: 'banner'
+    };
+
     this.dogs = [
       {
         image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',

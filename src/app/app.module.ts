@@ -17,6 +17,8 @@ import { MenuButtonComponent } from './menu-button/menu-button.component';
 import { WaitingBeerComponent } from './waiting-beer/waiting-beer.component';
 import { IconSliderComponent } from './icon-slider/icon-slider.component';
 
+import 'hammerjs';
+import {NguCarouselModule} from '@ngu/carousel';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { IconSliderComponent } from './icon-slider/icon-slider.component';
     IconSliderComponent
   ],
   imports: [
+    NguCarouselModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
