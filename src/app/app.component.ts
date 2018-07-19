@@ -15,8 +15,12 @@ export class AppComponent implements OnInit {
   imageWidth = '100px';
   private raised = false;
   panelFlexDirection = 'row';
-  showDesc = false;
+  showDesc = true;
   carouselOne: any;
+
+  constructor() {
+    this.collapse();
+  }
 
   toggleState() {
     this.raised = !this.raised;
@@ -28,6 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   private collapse() {
+    console.log('collapse')
     this.productDetailsHeight = '100px';
     this.imageHeight = '100%';
     this.imageWidth = '100px';
@@ -36,6 +41,7 @@ export class AppComponent implements OnInit {
   }
 
   private raiseUp() {
+    console.log('raised')
     this.productDetailsHeight = 'calc(100% - 50px)';
     this.imageHeight = '200px';
     this.imageWidth = '100%';
@@ -52,13 +58,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.carouselOne = {
       grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
       slide: 1,
       speed: 400,
       interval: 4000,
       point: {
-        visible: true
+        visible: false
       },
       load: 2,
       touch: true,
@@ -85,4 +92,7 @@ export class AppComponent implements OnInit {
   }
 
 
+  carouselClicked(event) {
+    event.stopPropagation();
+  }
 }
