@@ -1,40 +1,14 @@
 <div class="header">
 
 </div>
-<div class="main" >
+<div class="main">
   <div class="layer1">
     <img src="../assets/map.PNG">
   </div>
-  <div   class="layer2" [ngStyle]="{'height':productDetailsHeight,'flex-direction':panelFlexDirection}" >
-    <div class="img-container" [ngStyle]="{'width':imageWidth ,'height':imageHeight}" >
-      <ngu-carousel [inputs]="carouselOne" *ngIf="showDesc" (click)="carouselClicked($event)">
-        <ngu-item NguCarouselItem>
-          <img class="c-img" src="https://cdn.getyourguide.com/img/tour_img-277998-97.jpg" >
-        </ngu-item>
-        <ngu-item NguCarouselItem>
-          <img class="c-img"  src="https://cdn.getyourguide.com/img/tour_img-277998-97.jpg" >
-        </ngu-item>
-        <button NguCarouselPrev >&lt;</button>
-        <button NguCarouselNext >&gt;</button>
-      </ngu-carousel>
-
-      <img   *ngIf="!showDesc" src="https://cdn.getyourguide.com/img/tour_img-277998-97.jpg"  class="thumb">
-
-    </div>
-    <div class="collapse-btn" *ngIf="showDesc" (click)="toggleState()">V</div>
-    <div class="description" >
-      <p>header</p>
-      <p>second</p>
-      <div *ngIf="showDesc">
-        <p>
-          Lorem ipsum dolor sit amet, accumsan inciderint ei vix, eam cu nonumy ceteros. Doctus probatus insolens his ea, sit dolore graecis vivendum ei. Ad eam laboramus reprimique reprehendunt. Quo oblique euismod concludaturque ne, repudiare pertinacia intellegam an mea, sea exerci sanctus ut. Qui epicurei sensibus disputationi ex, ex detracto electram sed.
-
-          Vel mundi senserit tincidunt no, te has abhorreant neglegentur. Mea ea aliquip denique, ad regione aperiam duo. Veri scripta his at. Vel nostrud alterum omnesque no. Mei ei consetetur definitionem, eos aliquam convenire pertinacia at. Ea ver
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="layer3" *ngIf="!showDesc" (click)="toggleState()"></div>
-
+  <app-place-details name="attraction"
+                     rating="5 stars"
+                     description=" Lorem ipsum dolor sit amet, accumsan inciderint ei vix, eam cu nonumy ceteros. Doctus probatus insolens his           ea, sit dolore graecis vivendum ei. Ad eam laboramus reprimique reprehendunt. Quo oblique euismod           concludaturque ne, repudiare"
+                     maxHeight='calc(100% - 50px)'>
+  </app-place-details>
 
 </div>

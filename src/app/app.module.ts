@@ -19,13 +19,18 @@ import { IconSliderComponent } from './icon-slider/icon-slider.component';
 
 import 'hammerjs';
 import {NguCarouselModule} from '@ngu/carousel';
+import {AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
+import { StreetviewDirective } from './streetview.directive';
+import { PlaceDetailsComponent } from './place-details/place-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuButtonComponent,
     WaitingBeerComponent,
-    IconSliderComponent
+    IconSliderComponent,
+    StreetviewDirective,
+    PlaceDetailsComponent
   ],
   imports: [
     NguCarouselModule,
@@ -44,9 +49,12 @@ import {NguCarouselModule} from '@ngu/carousel';
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDN92F7AIQGeSTqE6emuFOstLzhgNdwTDE'
+    })
   ],
-  providers: [],
+  providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule {

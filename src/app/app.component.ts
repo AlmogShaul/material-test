@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -22,40 +22,6 @@ export class AppComponent implements OnInit {
     this.collapse();
   }
 
-  toggleState() {
-    this.raised = !this.raised;
-    if (this.raised) {
-      this.raiseUp();
-    } else {
-      this.collapse();
-    }
-  }
-
-  private collapse() {
-    console.log('collapse')
-    this.productDetailsHeight = '100px';
-    this.imageHeight = '100%';
-    this.imageWidth = '100px';
-    this.panelFlexDirection = 'row';
-    this.showDesc = false;
-  }
-
-  private raiseUp() {
-    console.log('raised')
-    this.productDetailsHeight = 'calc(100% - 50px)';
-    this.imageHeight = '200px';
-    this.imageWidth = '100%';
-    this.panelFlexDirection = 'column';
-    this.showDesc = true;
-  }
-
-  setShowPageA() {
-    this.showPageA = true;
-  }
-
-  setShowPageB() {
-    this.showPageA = false;
-  }
 
   ngOnInit() {
 
@@ -89,6 +55,42 @@ export class AppComponent implements OnInit {
         description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
       }
     ];
+
+  }
+
+  toggleState() {
+    this.raised = !this.raised;
+    if (this.raised) {
+      this.raiseUp();
+    } else {
+      this.collapse();
+    }
+  }
+
+  private collapse() {
+    console.log('collapse');
+    this.productDetailsHeight = '100px';
+    this.imageHeight = '100%';
+    this.imageWidth = '100px';
+    this.panelFlexDirection = 'row';
+    this.showDesc = false;
+  }
+
+  private raiseUp() {
+    console.log('raised');
+    this.productDetailsHeight = 'calc(100% - 50px)';
+    this.imageHeight = '200px';
+    this.imageWidth = '100%';
+    this.panelFlexDirection = 'column';
+    this.showDesc = true;
+  }
+
+  setShowPageA() {
+    this.showPageA = true;
+  }
+
+  setShowPageB() {
+    this.showPageA = false;
   }
 
 

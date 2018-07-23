@@ -1,0 +1,37 @@
+<div   class="layer2" [ngStyle]="{'height':productDetailsHeight,'flex-direction':panelFlexDirection}"  >
+  <div (click)="toggleState()" class="img-container" [ngStyle]="{'width':imageWidth ,'height':imageHeight}" >
+    <img   src="https://cdn.getyourguide.com/img/tour_img-277998-97.jpg"  class="thumb">
+  </div>
+
+  <div (click)="toggleState()" *ngIf="!showDesc" class="bottom-description" >
+    <p>{{name}}</p>
+    <p>{{rating}}</p>
+    <div *ngIf="showDesc">
+      <p>
+        Lorem ipsum dolor sit amet, accumsan inciderint ei vix, eam cu nonumy ceteros. Doctus probatus insolens his ea, sit dolore graecis vivendum ei. Ad eam laboramus reprimique reprehendunt. Quo oblique euismod concludaturque ne, repudiare pertinacia intellegam an mea, sea exerci sanctus ut. Qui epicurei sensibus disputationi ex, ex detracto electram sed.
+
+        Vel mundi senserit tincidunt no, te has abhorreant neglegentur. Mea ea aliquip denique, ad regione aperiam duo. Veri scripta his at. Vel nostrud alterum omnesque no. Mei ei consetetur definitionem, eos aliquam convenire pertinacia at. Ea ver
+      </p>
+    </div>
+  </div>
+  <div *ngIf="showDesc" class="bottom-section">
+    <div class="options">
+      <div (click)="descriptionSelected = false">Street View</div>
+      <div (click)="descriptionSelected = true">Description</div>
+    </div>
+    <div class="description" *ngIf="descriptionSelected">
+      <div class="name">{{name}}</div>
+      <div class="rating">{{rating}}</div>
+      <div *ngIf="showDesc">
+        <p>
+         {{description}}
+        </p>
+      </div>
+    </div>
+    <div class="street-view" *ngIf="!descriptionSelected">
+
+      <agm-map [latitude]="48.823214" [longitude]="2.345189" appStreetview></agm-map>
+
+    </div>
+  </div>
+</div>
