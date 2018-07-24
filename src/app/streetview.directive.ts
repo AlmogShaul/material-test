@@ -1,4 +1,4 @@
-import {AfterViewInit, Directive} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef} from '@angular/core';
 import {GoogleMapsAPIWrapper} from '@agm/core';
 
 declare var google: any;
@@ -8,24 +8,27 @@ declare var google: any;
 })
 export class StreetviewDirective implements AfterViewInit {
 
-  constructor(private gmapsApi: GoogleMapsAPIWrapper) {
+  constructor(private gmapsApi: GoogleMapsAPIWrapper, private el: ElementRef) {
   }
 
   ngAfterViewInit() {
-    this.updateMap();
+    this.updateMap2();
   }
 
-  private updateMap() {
+  private updateMap2() {
     this.gmapsApi.getNativeMap().then((map: any) => {
-      const panorama = map.getStreetView();
-      panorama.setPosition({lat: 40.729884, lng: -73.990988});
-      panorama.setPov(({
-        heading: 265,
-        pitch: 0
-      }));
 
+      const panorama = new google.maps.StreetViewPanorama(
+        document.getElementById('pano'), {
+          position: {lat: 48.857947, lng: 2.294449},
+          motionTracking: false,
+          motionTrackingControl: false
+
+        });
       panorama.setVisible(true);
+      map.setStreetView(panorama);
     });
   }
+
 
 }
