@@ -1,9 +1,21 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  animations: [
+    trigger('itemState', [
+      transition('void => *', [
+        style({transform: 'translateY(40px)', opacity: 0}),
+        animate('500ms ease-out')
+      ]),
+      transition('* => void', [
+        animate('500ms ease-in', style({transform: 'translateY(100%)', opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'app';
@@ -38,23 +50,24 @@ export class AppComponent implements OnInit {
       loop: true,
       custom: 'banner'
     };
+    this.dogs = [];
+    [{
+      image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+      description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+    }, {
+      image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+    },
+      {
+        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+        description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+      }, {
+      image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+    }].forEach((v, i) => setTimeout(() => {
+      this.dogs.push(v);
+    }, i * 300));
 
-    this.dogs = [
-      {
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
-      }, {
-        image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-        description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
-      },
-      {
-        image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
-      }, {
-        image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-        description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
-      }
-    ];
 
   }
 
