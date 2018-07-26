@@ -7,7 +7,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   styleUrls: ['./app.component.less'],
   animations: [
     trigger('itemState', [
-      transition('void => *', [
+      transition(':enter', [
         style({transform: 'translateY(40px)', opacity: 0}),
         animate('500ms ease-out')
       ]),
