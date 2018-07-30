@@ -22,6 +22,7 @@ import {NguCarouselModule} from '@ngu/carousel';
 import {AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 import { StreetviewDirective } from './streetview.directive';
 import { PlaceDetailsComponent } from './place-details/place-details.component';
+import { NgListComponent } from './ng-list/ng-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PlaceDetailsComponent } from './place-details/place-details.component';
     WaitingBeerComponent,
     IconSliderComponent,
     StreetviewDirective,
-    PlaceDetailsComponent
+    PlaceDetailsComponent,
+    NgListComponent
   ],
   imports: [
     NguCarouselModule,

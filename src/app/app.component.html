@@ -1,14 +1,10 @@
-
 <div class="main">
 
-  <div *ngFor="let dog of dogs" class="dog-section"  [@itemState]="state">
-    <p>{{dog.description}}</p>
-  </div>
+  <div></div>
+  <app-ng-list [inputItems]="dogs">
+      <ng-template let-item><span>{{item.description}}</span></ng-template>
+  </app-ng-list>
+  <div></div>
 
-  <!--<app-place-details name="attraction"-->
-  <!--rating="5 stars"-->
-  <!--description=" Lorem ipsum dolor sit amet, accumsan inciderint ei vix, eam cu nonumy ceteros. Doctus probatus insolens his           ea, sit dolore graecis vivendum ei. Ad eam laboramus reprimique reprehendunt. Quo oblique euismod           concludaturque ne, repudiare"-->
-  <!--maxHeight='calc(100% - 50px)'>-->
-  <!--</app-place-details>-->
 
 </div>

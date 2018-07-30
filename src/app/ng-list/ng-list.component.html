@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <div *ngFor="let item of items" class="list-section" [@itemState] (click)="select(item)"
+       [ngClass]="{'selected':item.selected,'not-selected':item.selected == false}">
+    <ng-container *ngTemplateOutlet="template;context:{$implicit: item}"></ng-container>
+  </div>
+</div>

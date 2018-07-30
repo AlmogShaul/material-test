@@ -8,8 +8,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   animations: [
     trigger('itemState', [
       transition(':enter', [
-        style({transform: 'translateY(40px)', opacity: 0}),
-        animate('500ms ease-out')
+        style({transform: 'translateY(100px)', opacity: 0}),
+        animate('300ms ease-out')
       ]),
       transition('* => void', [
         animate('500ms ease-in', style({transform: 'translateY(100%)', opacity: 1}))
@@ -50,24 +50,20 @@ export class AppComponent implements OnInit {
       loop: true,
       custom: 'banner'
     };
-    this.dogs = [];
-    [{
+    this.dogs = [{
       image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-      description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+      description: '1 orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
     }, {
       image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+      description: '2 orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
     },
       {
         image: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-        description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+        description: '3 orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
       }, {
-      image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
-    }].forEach((v, i) => setTimeout(() => {
-      this.dogs.push(v);
-    }, i * 300));
-
+        image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+        description: '4 orem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est id purus commodo condimen'
+      }];
 
   }
 
